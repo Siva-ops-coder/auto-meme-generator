@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto Meme Generator</title>
+</head>
+<body>
+    <h1>Create Your Meme</h1>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <label>Caption:</label><br>
+        <input type="text" name="caption" required><br><br>
+
+        <label>Upload Image (optional):</label><br>
+        <input type="file" name="image"><br><br>
+
+        <input type="submit" value="Generate Meme">
+    </form>
+
+    {% if meme_url %}
+        <h2>Your Meme:</h2>
+        <img src="{{ meme_url }}" alt="Your meme" style="max-width: 100%; height: auto;">
+    {% endif %}
+</body>
+</html>
